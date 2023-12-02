@@ -59,7 +59,7 @@
 
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="txtPass"><i class="fas fa-key"></i></span>
-                                <input type="text" class="form-control" id="pass" name="pass" placeholder="password" >
+                                <input type="password" class="form-control" id="pass" name="pass" placeholder="password" >
                             </div>
                             
                             <div class="row align-items-center remember">

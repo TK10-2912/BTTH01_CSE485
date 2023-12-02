@@ -1,5 +1,6 @@
 <?php
-@include("hearder.php")
+@include("get_data_index.php");
+@include("hearder.php");
 ?>
 
 <main class="container mt-5 mb-5">
@@ -13,7 +14,7 @@
                     </h5>
 
                     <h5 class="h1 text-center">
-                        110
+                        <?php echo $soLuongNguoiDung?>
                     </h5>
                 </div>
             </div>

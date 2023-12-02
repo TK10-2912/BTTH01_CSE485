@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 02, 2023 lúc 05:17 PM
--- Phiên bản máy phục vụ: 10.4.28-MariaDB
--- Phiên bản PHP: 8.2.4
+-- Host: 127.0.0.1
+-- Generation Time: Dec 02, 2023 at 09:20 PM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `btth01_cse485`
+-- Database: `btth01_cse485`
 --
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `baiviet`
+-- Table structure for table `baiviet`
 --
 
 CREATE TABLE `baiviet` (
@@ -40,7 +40,7 @@ CREATE TABLE `baiviet` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_vietnamese_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `baiviet`
+-- Dumping data for table `baiviet`
 --
 
 INSERT INTO `baiviet` (`ma_bviet`, `tieude`, `ten_bhat`, `ma_tloai`, `tomtat`, `noidung`, `ma_tgia`, `ngayviet`, `hinhanh`) VALUES
@@ -61,7 +61,7 @@ INSERT INTO `baiviet` (`ma_bviet`, `tieude`, `ten_bhat`, `ma_tloai`, `tomtat`, `
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tacgia`
+-- Table structure for table `tacgia`
 --
 
 CREATE TABLE `tacgia` (
@@ -71,7 +71,7 @@ CREATE TABLE `tacgia` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_vietnamese_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `tacgia`
+-- Dumping data for table `tacgia`
 --
 
 INSERT INTO `tacgia` (`ma_tgia`, `ten_tgia`, `hinh_tgia`) VALUES
@@ -87,7 +87,7 @@ INSERT INTO `tacgia` (`ma_tgia`, `ten_tgia`, `hinh_tgia`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `theloai`
+-- Table structure for table `theloai`
 --
 
 CREATE TABLE `theloai` (
@@ -96,7 +96,7 @@ CREATE TABLE `theloai` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_vietnamese_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `theloai`
+-- Dumping data for table `theloai`
 --
 
 INSERT INTO `theloai` (`ma_tloai`, `ten_tloai`) VALUES
@@ -112,27 +112,27 @@ INSERT INTO `theloai` (`ma_tloai`, `ten_tloai`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
-  `username` varchar(10000) NOT NULL,
-  `password` varchar(10000) NOT NULL
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_vietnamese_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `users`
+-- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`username`, `password`) VALUES
-('admin', '$2y$10$4sZl2JSjPfcrt50YvT7jmObdJZ/6XE7v.ZIzlRhvmUlRb/ccj352q');
+('admin', '$2y$10$AevcrpJFteagdjH9QjrIZetj5UVXenSzXwM/johtXy3HcQeqNxPI.');
 
 --
--- Chỉ mục cho các bảng đã đổ
+-- Indexes for dumped tables
 --
 
 --
--- Chỉ mục cho bảng `baiviet`
+-- Indexes for table `baiviet`
 --
 ALTER TABLE `baiviet`
   ADD PRIMARY KEY (`ma_bviet`),
@@ -140,45 +140,51 @@ ALTER TABLE `baiviet`
   ADD KEY `ma_tgia` (`ma_tgia`);
 
 --
--- Chỉ mục cho bảng `tacgia`
+-- Indexes for table `tacgia`
 --
 ALTER TABLE `tacgia`
   ADD PRIMARY KEY (`ma_tgia`);
 
 --
--- Chỉ mục cho bảng `theloai`
+-- Indexes for table `theloai`
 --
 ALTER TABLE `theloai`
   ADD PRIMARY KEY (`ma_tloai`);
 
 --
--- AUTO_INCREMENT cho các bảng đã đổ
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD UNIQUE KEY `username` (`username`);
+
+--
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT cho bảng `baiviet`
+-- AUTO_INCREMENT for table `baiviet`
 --
 ALTER TABLE `baiviet`
   MODIFY `ma_bviet` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- AUTO_INCREMENT cho bảng `tacgia`
+-- AUTO_INCREMENT for table `tacgia`
 --
 ALTER TABLE `tacgia`
   MODIFY `ma_tgia` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT cho bảng `theloai`
+-- AUTO_INCREMENT for table `theloai`
 --
 ALTER TABLE `theloai`
-  MODIFY `ma_tloai` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `ma_tloai` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
--- Các ràng buộc cho các bảng đã đổ
+-- Constraints for dumped tables
 --
 
 --
--- Các ràng buộc cho bảng `baiviet`
+-- Constraints for table `baiviet`
 --
 ALTER TABLE `baiviet`
   ADD CONSTRAINT `baiviet_ibfk_1` FOREIGN KEY (`ma_tloai`) REFERENCES `theloai` (`ma_tloai`),
