@@ -15,7 +15,7 @@ try {
     echo "Connection failed: " . $e->getMessage();
     $connection = null;
 }
-$sql = "SELECT tieude, hinhanh FROM baiviet";
+$sql = "SELECT ma_bviet, tieude, hinhanh FROM baiviet";
 $statement = $connection->prepare($sql);
 $statement->execute();
 $posts = $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -99,7 +99,7 @@ $statement->closeCursor();
                         <img src="./admin/uploads/<?= $post['hinhanh']; ?>" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title text-center">
-                                <a href="" class="text-decoration-none"><?php echo $post['tieude']; ?></a>
+                                <a href="detail.php?id=<?=$post['ma_bviet']?>" class="text-decoration-none"><?php echo $post['tieude']; ?></a>
                             </h5>
                         </div>
                     </div>
