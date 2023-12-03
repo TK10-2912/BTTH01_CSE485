@@ -19,8 +19,7 @@
                         ?>
                 <div class="input-group mt-3 mb-3">
                     <span class="input-group-text" id="lblAuName">Mã bài viết</span>
-                    <input type="text" class="form-control" name="txtID"
-                        value="<?=htmlspecialchars($id)?>">
+                    <input type="text" class="form-control" name="txtID" value="<?=htmlspecialchars($id)?>">
                 </div>
                 <div class="input-group mt-3 mb-3">
                     <span class="input-group-text" id="lblAuName">Tiêu đề</span>
@@ -54,7 +53,8 @@
                 </div>
                 <div class="input-group mt-3 mb-3">
                     <span class="input-group-text" id="lblAuName">Ngày viết</span>
-                    <input type="date" class="form-control" name="ngayviet" required value="<?=$posts[0]['ngayviet']?>">
+                    <input type="date" class="form-control" name="ngayviet" required
+                        value="<?= date('Y-m-d', strtotime($posts[0]['ngayviet'])) ?>">
                 </div>
                 <div class="input-group mt-3 mb-3">
                     <span class="input-group-text" id="lblAuImg">Ảnh bài viết</span>

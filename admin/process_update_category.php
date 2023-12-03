@@ -11,7 +11,5 @@ if (isset($_POST['txtma_tloai']) && isset($_POST['txtten_tloai'])) {
     $statement->execute();
     $statement->closeCursor();
     header("Location: ./category.php");
-} else {
-    echo "22222222";
 }
 ?>

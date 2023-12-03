@@ -25,8 +25,7 @@
                 </div>
                 <div class="input-group mt-3 mb-3">
                     <span class="input-group-text" id="lblCatName">Ảnh tác giả</span>
-                    <img  src="uploads/<?php echo $htg ?>"
-                        alt="Hình ảnh của <?php echo $ttg ?>" width="50">
+                    <img src="uploads/<?php echo $htg ?>" alt="Hình ảnh của <?php echo $ttg ?>" width="50">
                     <input type="file" class="form-control" name="upload">
                 </div>
                 <div class="form-group  float-end ">

@@ -33,7 +33,7 @@ include("hearder.php");
                 </div>
                 <div class="input-group mt-3 mb-3">
                     <span class="input-group-text" id="lblAuName">Ngày viết</span>
-                    <input type="date"  class="form-control" name="ngayviet" required>
+                    <input type="date" class="form-control" name="ngayviet" required>
                 </div>
 
                 <div class="input-group mt-3 mb-3">

@@ -29,7 +29,8 @@ include("hearder.php");
                         <td><img src="uploads/<?php echo $author['hinh_tgia']; ?>"
                                 alt="Hình ảnh của <?php echo $author['ten_tgia']; ?>" width="50"></td>
                         <td>
-                        <a href="edit_author.php?ma_tgia=<?=$author['ma_tgia']?>&ten_tgia=<?=$author['ten_tgia']?>&hinh_tgia=<?=$author['hinh_tgia']?>" class="btn btn-success">Sửa</a>
+                            <a href="edit_author.php?ma_tgia=<?=$author['ma_tgia']?>&ten_tgia=<?=$author['ten_tgia']?>&hinh_tgia=<?=$author['hinh_tgia']?>"
+                                class="btn btn-success">Sửa</a>
                             <a href="delete_author.php?id=<?php echo $author['ma_tgia']; ?>" class="btn btn-danger"
                                 onclick="return confirm('Bạn có chắc chắn muốn xoá không?')">Xoá</a>
                         </td>

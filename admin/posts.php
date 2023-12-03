@@ -1,7 +1,6 @@
 <?php
 include("hearder.php");
 ?>
-
 <main class="container mt-5 mb-5">
     <div class="row">
         <div class="col-sm">
@@ -20,7 +19,6 @@ include("hearder.php");
                         <th>Tên bài hát</th>
                         <th>Tóm tắt</th>
                         <th>Hình ảnh</th>
-                        
                     </tr>
                 </thead>
                 <tbody>
@@ -33,7 +31,7 @@ include("hearder.php");
                         <td><img src="uploads/<?php echo $post['hinhanh']; ?>"
                                 alt="Hình ảnh của <?php echo $post['ten_bhat']; ?>" width="50"></td>
                         <td>
-                        <a href="edit_posts.php?id=<?=$post['ma_bviet']?>" class="btn btn-success">Sửa</a>
+                            <a href="edit_posts.php?id=<?=$post['ma_bviet']?>" class="btn btn-success">Sửa</a>
                             <a href="delete_posts.php?id=<?php echo $post['ma_bviet']; ?>" class="btn btn-danger"
                                 onclick="return confirm('Bạn có chắc chắn muốn xoá không?')">Xoá</a>
                         </td>
@@ -41,11 +39,9 @@ include("hearder.php");
                     <?php endforeach; ?>
                 </tbody>
             </table>
-
         </div>
     </div>
 </main>
-
 <?php
 @include("footer.php");
 ?>

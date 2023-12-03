@@ -1,6 +1,5 @@
 <?php
 @include("connect_database.php");
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Lấy dữ liệu từ form
     $txtTieude = $_POST['txtTieude'];
@@ -15,13 +14,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $tmp_path = $_FILES['file']['tmp_name'];
     $upload_path = 'uploads/' . $filename;
     move_uploaded_file($tmp_path, $upload_path);
-
     // Cập nhật thông tin tác giả trong cơ sở dữ liệu
     $sql = "UPDATE baiviet 
     SET tieude=:tieude, ten_bhat=:ten_bhat, ma_tloai=:ma_tloai, tomtat=:tomtat, noidung=:noidung, ma_tgia=:ma_tgia, ngayviet=:ngayviet, hinhanh=:hinhanh
     WHERE ma_bviet=:id";
-
-
     $statement = $connection->prepare($sql);
     $statement->bindParam(':tieude', $txtTieude, PDO::PARAM_STR);
     $statement->bindParam(':ten_bhat', $txtTenbh, PDO::PARAM_STR);
@@ -34,10 +30,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $statement->bindParam(':id', $id, PDO::PARAM_STR);
     $statement->execute();
     $statement->closeCursor();
-
-    // Chuyển hướng về trang danh sách tác giả sau khi cập nhật
     header("Location: ./posts.php");
-} else {
-   echo"2222222222";
-}
+} 
 ?>
