@@ -13,6 +13,9 @@ if(isset($_POST['user']) && isset($_POST['pass'])){
             $row = $stmt->fetch();
             $pass_saved = $row['password'];
             if(password_verify($pass, $pass_saved)){
+                session_start();
+                $_SESSION['user'] = $user;
+                $_SESSION['pass'] = $pass;
                 header("Location: admin/index.php");
                 exit(); 
             } else {

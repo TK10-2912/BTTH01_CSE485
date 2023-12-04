@@ -51,9 +51,15 @@ $statement->closeCursor();
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="./">Trang chủ</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./login.php">Đăng nhập</a>
-                        </li>
+                        <?php
+                            session_start();
+                            if(isset($_SESSION['user']) && isset($_SESSION['pass']))
+                            {
+                                echo " <li class='nav-item'><a class='nav-link' href='./admin/index.php'>Admin</a> </li>";
+                            }
+                            else
+                            echo " <li class='nav-item'><a class='nav-link' href='./login.php'>Đăng nhập</a> </li>";
+                        ?>
                     </ul>
                     <form class="d-flex" role="search">
                         <input class="form-control me-2" type="search" placeholder="Nội dung cần tìm" aria-label="Search">

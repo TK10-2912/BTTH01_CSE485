@@ -21,7 +21,7 @@
             <div class="card mb-2" style="width: 100%;">
                 <div class="card-body">
                     <h5 class="card-title text-center">
-                        <a href="" class="text-decoration-none">Thể loại</a>
+                        <a href="category.php" class="text-decoration-none">Thể loại</a>
                     </h5>
                     <h5 class="h1 text-center">
                         <?php echo $soLuongTheLoai?>
@@ -33,7 +33,7 @@
             <div class="card mb-2" style="width: 100%;">
                 <div class="card-body">
                     <h5 class="card-title text-center">
-                        <a href="" class="text-decoration-none">Tác giả</a>
+                        <a href="author.php" class="text-decoration-none">Tác giả</a>
                     </h5>
                     <h5 class="h1 text-center">
                         <?php
@@ -47,7 +47,7 @@
             <div class="card mb-2" style="width: 100%;">
                 <div class="card-body">
                     <h5 class="card-title text-center">
-                        <a href="" class="text-decoration-none">Bài viết</a>
+                        <a href="posts.php" class="text-decoration-none">Bài viết</a>
                     </h5>
                     <h5 class="h1 text-center">
                         <?php echo $soLuongBaiViet?>
